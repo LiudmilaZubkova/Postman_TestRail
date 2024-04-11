@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "cb7a0a88-6960-4cc4-a6c4-00d70213e922",
+		"name": "Post collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add_project",
+			"id": "fd29b261-adc0-4e4c-b301-74f45d172273",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Project X11\",\n    \"announcement\": \"Welcome to project X\",\n    \"show_announcement\": true,\n    \"suite_mode\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/{{api}}/add_project"
+			},
+			"response": []
+		},
+		{
+			"name": "delete_project",
+			"id": "8ee250b1-a8d7-4607-aa7a-b562b293f196",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{base_url}}/{{api}}/delete_project/10"
+			},
+			"response": []
+		},
+		{
+			"name": "update_project",
+			"id": "b6ba8fc7-8591-417f-9fa2-6480249d3947",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"announcement\": \"Happy Holidays!\",\n    \"show_announcement\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/{{api}}/update_project/1"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "{{password}}",
+			"username": "{{email}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "68971200-a46e-4aa1-ab65-de57c564d4f0",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6e8dcf52-c294-4729-a4f1-a0e0deb692b0",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
