@@ -33,13 +33,18 @@
 						"id": "e193f5f5-693a-43ca-8603-6216b23e51ae",
 						"exec": [
 							"var responseData = pm.response.json();",
-							"var projectID = responseData.id;",
+							"//var projectID = responseData.id;",
 							"var projectName = responseData.name;",
 							"var projectAnnouncement = responseData.announcement;",
 							"",
-							"console.log(\"projectID: \" + projectID);",
+							"//console.log(\"projectID: \" + projectID);",
 							"console.log(\"projectName: \" + projectName);",
-							"console.log(\"projectAnnouncement: \" + projectAnnouncement);"
+							"console.log(\"projectAnnouncement: \" + projectAnnouncement);",
+							"",
+							"pm.collectionVariables.set(\"ProjectID\", responseData.id);",
+							"console.log(\"ProjectID: \" + pm.collectionVariables.get(\"ProjectID\"));",
+							"",
+							""
 						],
 						"type": "text/javascript",
 						"packages": {}
