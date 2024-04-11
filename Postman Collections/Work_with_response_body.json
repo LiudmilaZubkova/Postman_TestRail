@@ -20,7 +20,7 @@
 						"type": "text"
 					}
 				],
-				"url": "{{base_url}}/{{api}}/delete_project/10"
+				"url": "{{base_url}}/{{api}}/delete_project/{{ProjectID}}"
 			},
 			"response": []
 		},
