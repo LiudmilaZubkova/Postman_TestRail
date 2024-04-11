@@ -76,6 +76,18 @@
 				"url": "{{base_url}}/{{api}}/add_project"
 			},
 			"response": []
+		},
+		{
+			"name": "New Request",
+			"id": "d7e00e23-c88b-4cd1-a9f5-a2b02b3b01c0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	],
 	"auth": {
