@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "f915cc6d-6818-49f4-b3cc-b555f94ea10b",
+		"name": "Work with response body",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "delete_project",
+			"id": "5d964ac9-8306-4dfc-ad30-15714cc649df",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{base_url}}/{{api}}/delete_project/10"
+			},
+			"response": []
+		},
+		{
+			"name": "add_project",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e193f5f5-693a-43ca-8603-6216b23e51ae",
+						"exec": [
+							"var responseData = pm.response.json();",
+							"var projectID = responseData.id;",
+							"var projectName = responseData.name;",
+							"var projectAnnouncement = responseData.announcement;",
+							"",
+							"console.log(\"projectID: \" + projectID);",
+							"console.log(\"projectName: \" + projectName);",
+							"console.log(\"projectAnnouncement: \" + projectAnnouncement);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "695fbc22-e627-46bc-bd76-19275efd076b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Project X1661\",\n    \"announcement\": \"Welcome to project X\",\n    \"show_announcement\": true,\n    \"suite_mode\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/{{api}}/add_project"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "{{password}}",
+			"username": "{{email}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b12c38d0-1070-4abc-82db-bdc36efbcd89",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6323c9b6-e861-4d8d-83fa-7be8b91ca5eb",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
