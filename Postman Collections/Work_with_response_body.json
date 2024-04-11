@@ -103,5 +103,11 @@
 				]
 			}
 		}
+	],
+	"variable": [
+		{
+			"key": "ProjectID",
+			"value": ""
+		}
 	]
 }
