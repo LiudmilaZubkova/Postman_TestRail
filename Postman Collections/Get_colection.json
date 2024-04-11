@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "d229590a-a845-4eae-93f0-7ebb071811be",
+		"name": "Get colection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get_projects",
+			"id": "5d307cb5-5d01-47b1-ba1b-0c9fafaf4dd2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base_url}}/{{api}}/get_projects"
+			},
+			"response": []
+		},
+		{
+			"name": "get project with id",
+			"id": "6fd59e82-c844-40a9-ae81-89963072216e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base_url}}/{{api}}/get_project/1"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "{{password}}",
+			"username": "{{email}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "fa71b0fd-9c8e-4cf5-978c-6d71351f9c97",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "17979bca-a193-4a6d-aea3-1183f1efd25c",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
