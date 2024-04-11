@@ -35,7 +35,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Potestim\"\n    \"announcement\": \"Hello, Everyone!\"\n}",
+					"raw": "{\n    \"name\": \"Potestim\",\n    \"announcement\": \"Hello, Everyone!\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
