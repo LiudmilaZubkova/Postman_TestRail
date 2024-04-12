@@ -6,47 +6,6 @@
 	},
 	"item": [
 		{
-			"name": "delete_project",
-			"id": "5d964ac9-8306-4dfc-ad30-15714cc649df",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"url": "{{base_url}}/{{api}}/delete_project/{{ProjectID}}"
-			},
-			"response": []
-		},
-		{
-			"name": "update_project",
-			"id": "d7e00e23-c88b-4cd1-a9f5-a2b02b3b01c0",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"Potestim\",\n    \"announcement\": \"Hello, Everyone!\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "{{base_url}}/{{api}}/update_project/{{ProjectID}}"
-			},
-			"response": []
-		},
-		{
 			"name": "add_project",
 			"event": [
 				{
@@ -66,6 +25,12 @@
 							"pm.collectionVariables.set(\"ProjectID\", responseData.id);",
 							"console.log(\"ProjectID: \" + pm.collectionVariables.get(\"ProjectID\"));",
 							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 530ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(530);",
+							"});",
 							""
 						],
 						"type": "text/javascript",
@@ -96,6 +61,47 @@
 					}
 				},
 				"url": "{{base_url}}/{{api}}/add_project"
+			},
+			"response": []
+		},
+		{
+			"name": "update_project",
+			"id": "d7e00e23-c88b-4cd1-a9f5-a2b02b3b01c0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Potestim\",\n    \"announcement\": \"Hello, Everyone!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/{{api}}/update_project/{{ProjectID}}"
+			},
+			"response": []
+		},
+		{
+			"name": "delete_project",
+			"id": "5d964ac9-8306-4dfc-ad30-15714cc649df",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{base_url}}/{{api}}/delete_project/{{ProjectID}}"
 			},
 			"response": []
 		}
