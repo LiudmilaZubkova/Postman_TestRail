@@ -66,6 +66,24 @@
 		},
 		{
 			"name": "update_project",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "29db2aea-b45a-4cfd-a331-56c2f845c9d9",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 580ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(580);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"id": "d7e00e23-c88b-4cd1-a9f5-a2b02b3b01c0",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -88,6 +106,24 @@
 		},
 		{
 			"name": "delete_project",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "587207df-d602-42e4-82d2-8186c29187a4",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 700ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(700);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"id": "5d964ac9-8306-4dfc-ad30-15714cc649df",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
