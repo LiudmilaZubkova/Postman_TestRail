@@ -53,7 +53,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Project X1661\",\n    \"announcement\": \"Welcome to project X\",\n    \"show_announcement\": true,\n    \"suite_mode\": 1\n}",
+					"raw": "{\n    \"name\": \"{{name}}\",\n    \"announcement\": \"{{announcement}}\",\n    \"show_announcement\": true,\n    \"suite_mode\": 1\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -93,7 +93,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Potestim\",\n    \"announcement\": \"Hello, Everyone!\"\n}",
+					"raw": "{\n    \"name\": \"{{new_name}}\",\n    \"announcement\": \"{{new_announcement}}\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
