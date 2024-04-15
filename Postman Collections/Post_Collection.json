@@ -13,12 +13,12 @@
 					"script": {
 						"id": "2c70bb70-5af7-4497-97e2-0194e0c4f318",
 						"exec": [
-							"pm.test(\"Status code is 400\", function () {",
-							"    pm.response.to.have.status(400);",
+							"pm.test(\"Status code is correct\", function () {",
+							"    pm.response.to.have.status(pm.iterationData.get(\"status\"));",
 							"});",
-							"pm.test(\"We can see expected error\", function () {",
+							"pm.test(\"Check error message\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.error).to.eql(\"Field :name is a required field.\");",
+							"    pm.expect(jsonData.error).to.eql(pm.iterationData.get(\"error_text\"));",
 							"});",
 							"pm.test(\"Response time is less than 700ms\", function () {",
 							"    pm.expect(pm.response.responseTime).to.be.below(700);",
