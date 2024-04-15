@@ -89,11 +89,11 @@
 							"",
 							"pm.test(\"Project name is updated\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.name).to.eql(pm.iterationData.get(\"name\"));",
+							"    pm.expect(jsonData.name).to.eql(pm.iterationData.get(\"new_name\"));",
 							"});",
 							"pm.test(\"Announcement is updated\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.announcement).to.eql(pm.iterationData.get(\"announcement\"));",
+							"    pm.expect(jsonData.announcement).to.eql(pm.iterationData.get(\"new_announcement\"));",
 							"});"
 						],
 						"type": "text/javascript",
