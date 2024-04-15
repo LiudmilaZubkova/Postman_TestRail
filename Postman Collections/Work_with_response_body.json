@@ -87,11 +87,11 @@
 							"    pm.expect(pm.response.responseTime).to.be.below(580);",
 							"});",
 							"",
-							"pm.test(\"Project name is updated\", function () {",
+							"pm.test(\"Project name is updated as expected\", function () {",
 							"    var jsonData = pm.response.json();",
 							"    pm.expect(jsonData.name).to.eql(pm.iterationData.get(\"new_name\"));",
 							"});",
-							"pm.test(\"Announcement is updated\", function () {",
+							"pm.test(\"Announcement is updated as expected\", function () {",
 							"    var jsonData = pm.response.json();",
 							"    pm.expect(jsonData.announcement).to.eql(pm.iterationData.get(\"new_announcement\"));",
 							"});"
