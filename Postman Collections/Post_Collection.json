@@ -44,7 +44,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"\",\n    \"announcement\": \"Welcome to project X\",\n    \"show_announcement\": true,\n    \"suite_mode\": 1\n}",
+					"raw": "{\n    \"name\": \"{{name}}\",\n    \"announcement\": \"Welcome to project X\",\n    \"show_announcement\": {{show_announcement}},\n    \"suite_mode\": {{suite_mode}}\n}",
 					"options": {
 						"raw": {
 							"language": "json"
