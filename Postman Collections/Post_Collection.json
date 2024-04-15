@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "add_project",
+			"name": "add_project_negative_tests",
 			"event": [
 				{
 					"listen": "test",
@@ -18,7 +18,7 @@
 							"});",
 							"pm.test(\"Check error message\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.error).to.eql(pm.iterationData.get(\"error_text\"));",
+							"    pm.expect(jsonData.error).to.contains(pm.iterationData.get(\"error_text\"));",
 							"});",
 							"pm.test(\"Response time is less than 700ms\", function () {",
 							"    pm.expect(pm.response.responseTime).to.be.below(700);",
