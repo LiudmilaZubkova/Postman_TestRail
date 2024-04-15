@@ -7,6 +7,25 @@
 	"item": [
 		{
 			"name": "add_project",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2c70bb70-5af7-4497-97e2-0194e0c4f318",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"pm.test(\"We can see expected error\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.error).to.eql(\"Field :name is a required field.\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"id": "fd29b261-adc0-4e4c-b301-74f45d172273",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -22,7 +41,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Project X11\",\n    \"announcement\": \"Welcome to project X\",\n    \"show_announcement\": true,\n    \"suite_mode\": 1\n}",
+					"raw": "{\n    \"name\": \"\",\n    \"announcement\": \"Welcome to project X\",\n    \"show_announcement\": true,\n    \"suite_mode\": 1\n}",
 					"options": {
 						"raw": {
 							"language": "json"
