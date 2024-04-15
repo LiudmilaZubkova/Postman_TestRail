@@ -31,7 +31,15 @@
 							"pm.test(\"Response time is less than 700ms\", function () {",
 							"    pm.expect(pm.response.responseTime).to.be.below(700);",
 							"});",
-							""
+							"",
+							"pm.test(\"Expected project name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.name).to.eql(pm.iterationData.get(\"name\"));",
+							"});",
+							"pm.test(\"Expected announcement\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.announcement).to.eql(pm.iterationData.get(\"announcement\"));",
+							"});"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -77,6 +85,15 @@
 							"});",
 							"pm.test(\"Response time is less than 580ms\", function () {",
 							"    pm.expect(pm.response.responseTime).to.be.below(580);",
+							"});",
+							"",
+							"pm.test(\"Project name is updated\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.name).to.eql(pm.iterationData.get(\"name\"));",
+							"});",
+							"pm.test(\"Announcement is updated\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.announcement).to.eql(pm.iterationData.get(\"announcement\"));",
 							"});"
 						],
 						"type": "text/javascript",
